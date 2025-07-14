@@ -12,9 +12,9 @@ resource "aws_instance" "PROJECT" {
 }
 
 variable "instance_type" {
-
+ default = ["JENKINS-SERVER", "TOMCAT-SERVER"]
 }
 
 variable "instance_name" {
-  
+ default = ["JENKINS-SERVER", "TOMCAT-SERVER"]  
 }
