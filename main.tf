@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_instance" "PROJECT" {
+resource "aws_instance" "APP" {
   count         = 2
   ami           = "ami-0150ccaf51ab55a51"
   instance_type = var.instance_type[count.index]
