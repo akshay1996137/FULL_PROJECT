@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_instance" "APP" {
+resource "aws_instance" "TERRA" {
   count         = 2
   ami           = "ami-0150ccaf51ab55a51"
   instance_type = var.instance_type[count.index]
@@ -12,9 +12,9 @@ resource "aws_instance" "APP" {
 }
 
 variable "instance_type" {
- default = ["JENKINS-SERVER", "TOMCAT-SERVER"]
+  default = ["t2.micro", "t2.medium"]
 }
 
 variable "instance_name" {
- default = ["JENKINS-SERVER", "TOMCAT-SERVER"]  
+  default = ["dev-server", "test-server"]
 }
