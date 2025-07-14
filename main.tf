@@ -16,5 +16,5 @@ variable "instance_type" {
 }
 
 variable "instance_name" {
-  default = ["dev-server", "test-server"]
+  default = ["TOMCAT", "JENKINS"]
 }
