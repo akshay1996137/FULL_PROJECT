@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "TERRA" {
-  count         = 3
+  count         = 4
   ami           = var.ami[count.index]
   instance_type = var.instance_type[count.index]
   key_name = "avk"
@@ -14,13 +14,13 @@ resource "aws_instance" "TERRA" {
 }
 
 variable "ami" {
-  default = ["ami-0150ccaf51ab55a51", "ami-0150ccaf51ab55a51", "ami-020cba7c55df1f615"]
+  default = ["ami-0150ccaf51ab55a51", "ami-0150ccaf51ab55a51", "ami-0150ccaf51ab55a51", "ami-020cba7c55df1f615"]
 }
 
 variable "instance_type" {
-  default = ["t2.micro", "t2.micro", "t2.medium"]
+  default = ["t2.micro", "t2.micro","t2.medium","t2.micro"]
 }
 
 variable "instance_name" {
-  default = ["TOMCAT", "MONITOR-SERVER" , "JENKINS"]
+  default = ["TOMCAT", "MONITOR-SERVER" , "JENKINS", NODE-1]
 }
