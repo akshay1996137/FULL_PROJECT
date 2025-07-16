@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "aws_instance" "TERRA" {
   count         = 3
-  ami           = "var.ami"
+  ami           = var.ami[count.index]
   instance_type = var.instance_type[count.index]
   key_name = "avk"
   vpc_security_group_ids = ["sg-084962ca46cb28cd8"]
